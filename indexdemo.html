@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>newhtml</title>
+  <style>
+  .header{
+    width: 100%;text-align: center;height: 80px;
+  }
+  </style>
+</head>
+<body>
+  <div class="header" onclick="openone()"> 小白在线app</div>
+
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
+<script src="script/api.js"></script>
+<script type="text/javascript">
+function openone(){
+  api.openWin({
+      name: 'page1',
+      url: 'addone_win.html',
+      pageParam: {
+          name: 'test'
+      }
+  });
+
+}
+apiready=function() {
+  function openframe(){
+    api.openFrame({
+        name: 'page2',
+        url: 'html/new_win.html',
+        rect: {
+            x: 0,
+            y: 80,
+            w: 'auto',
+            h: 'auto'
+        },
+        pageParam: {
+            name: 'test'
+        },
+        bounces: true,
+        bgColor: 'rgba(0,0,0,0)',
+        vScrollBarEnabled: true,
+        hScrollBarEnabled: true
+    });
+
+  }
+  openframe()
+}
+
+</script>
+</html>
